@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="vi">
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>    
+        <link rel="stylesheet" href="{% static 'css/plugins.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/seev.min.css' %}"/>
+	      <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+
+     <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Task management</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon"  type="image/x-icon" href="{%static 'img/icon/icon.ico' %}"/>
+
+    <!-- Fonts and icons -->
+    <script src="{%static 'js/plugin/webfont/webfont.min.js' %}"></script>
+    <script>
+       WebFont.load({
+         google: { families: ["Public Sans:300,400,500,600,700"] },
+         custom: {
+           families: [
+             "Font Awesome 5 Solid",
+             "Font Awesome 5 Regular",
+             "Font Awesome 5 Brands",
+             "simple-line-icons",
+           ],
+           urls: ["{%static 'css/fonts.min.css' %}"],
+         },
+         active: function () {
+           sessionStorage.fonts = true;
+         },
+       });
+     </script>
+
+    <!-- CSS Files -->
+    {% comment %} <link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}">    
+    <link rel="stylesheet" href="{%static 'css/plugins.min.css' %}"/>
+    <link rel="stylesheet" href="{%static 'css/seev.min.css' %}"/>
+	  <link rel="stylesheet" href="{%static 'css/styles.css' %}"/> {% endcomment %}
+
+      <!--   Core JS Files   -->
+      <script src="{%static 'js/core/jquery-3.7.1.min.js' %}"></script>
+      <script src="{%static 'js/core/popper.min.js' %}"></script>
+      <script src="{%static 'js/core/bootstrap.min.js' %}"></script>
+      <!-- Bootstrap Notify -->
+      <script src="{%static 'js/plugin/bootstrap-notify/bootstrap-notify.min.js' %}"></script>
+      <!-- jQuery Scrollbar -->
+      <script src="{%static 'js/plugin/jquery-scrollbar/jquery.scrollbar.min.js' %}"></script>
+      <!-- jQuery datatables-->
+      <script src="{%static 'js/plugin/datatables/datatables.min.js' %}"></script>
+      <!-- seevadmin JS -->
+     <script src="{%static 'js/seevadmin.min.js' %}"></script>
+     <script src="{%static 'js/chart.js' %}"></script> 
+     <script src="{%static 'js/chartjs-plugin-datalabels' %}"></script>     
+     <style>
+      .chart-container {
+          display: flex; 
+          justify-content: space-around;  /* Căn giữa */
+          gap: 20px;  /* Khoảng cách giữa các biểu đồ */
+          flex-wrap: wrap; /* Đảm bảo xuống hàng khi màn hình nhỏ */
+      }
+      canvas {
+          max-width: 300px;  /* Giới hạn kích thước mỗi biểu đồ */
+          max-height: 300px;
+      }
+    </style>
+
+      <!-- seevadmin DEMO methods, don't include it in your project! -->
+    </head>
+   {% block body  %}
+   
+   {% endblock   %}
+</html>

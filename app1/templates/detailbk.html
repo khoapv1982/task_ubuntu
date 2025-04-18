@@ -1,0 +1,506 @@
+{% extends "common/layout.html" %}
+{% block body  %} 
+<body>
+  <div class="wrapper">  
+    <div class="sidebar">
+      <div class="sidebar-logo">       
+          <div class="logo-header" >
+              <a href="/task/{{username}}/" class="logo">
+                <div
+                  src="img/icon/logo.png" title="navbar brand" class="navbar-brand"
+                  title="logo"
+                ></div>
+              </a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                  <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                  <i class="gg-menu-left"></i>
+                </button>
+              </div>
+              <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+              </button>              
+          </div>  
+      </div>
+      <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+          <ul class="nav nav-secondary">
+            <li class="nav-item active submenu">
+              <a data-bs-toggle="collapse" href="#base">
+                <i class="fas fa-layer-group"></i>
+                <p>Works</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="base">
+                <ul class="nav nav-collapse">
+                  <li class="active">
+                    <a href="/taskfrequency/{{username}}">
+                      <span class="sub-item">Frequency Task</span>
+                    </a>
+                  </li>
+                  <li class="active">
+                    <a href="/addtaskForm/{{username}}">
+                      <span class="sub-item">Add Task</span>
+                    </a>
+                  </li>
+                  <li class="active">
+                    <a href="/addtaskassign/{{username}}">
+                      <span class="sub-item">Assign task</span>
+                    </a>
+                  </li>
+                  <li class="active">
+                    <a href="/approvetasklist/{{username}}">
+                      <span class="sub-item">Task wait for approve</span>
+                    </a>
+                  </li>
+                  <li class="active">
+                    <a href="/approved/{{username}}">
+                      <span class="sub-item">Approved task</span>
+                    </a>
+                  </li>
+                  <li class="active">
+                    <a href="/outofdate_task/{{username}}">
+                      <span class="sub-item">Task out of date</span>
+                    </a>
+                  </li>
+                
+                </ul>
+              </div>
+          </li>
+              <li class="nav-item">
+                  <a data-bs-toggle="collapse" href="#sidebarLayouts">
+                    <i class="fas fa-th-list"></i>
+                    <p>Department</p>
+                    <span class="caret"></span>
+                  </a>
+                  <div class="collapse" id="sidebarLayouts">
+                    <ul class="nav nav-collapse">
+                      <li>
+                        <a href="/deptlist/{{username}}">
+                          <span class="sub-item">Department list </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/upload_excel/{{username}}">
+                          <span class="sub-item">Upload user list </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/upload_excel_emp/{{username}}">
+                          <span class="sub-item">Upload employee list </span>
+                        </a>
+                      </li>
+                     
+                    </ul>
+                  </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarLayouts">
+                  <i class="fas fa-th-list"></i>
+                  <p>Transfer informations</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="sidebarLayouts">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="/addtrans/{{username}}">
+                        <span class="sub-item">Share informations </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/gettrans/{{username}}">
+                        <span class="sub-item">Get share informations </span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </div>
+            </li>
+              
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- End Sidebar -->
+
+    <div class="main-panel">
+      <div class="main-header">
+        <div class="main-header-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" >
+              <a href="/task/{{username}}" class="logo"> <div alt="navbar brand" class="navbar-brand" title="Logo"></div></a>
+              <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+              </div>
+              <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+              </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <!-- Navbar Header -->
+        <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom" >
+          <div class="container-fluid">
+              <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex" >
+              <div class="input-group">
+                <form  action="/search/{{username}}/"} method="get">
+                    <div class="input-group-prepend">
+                        <button type="submit" class="btn btn-search pe-1">
+                          <i class="fa fa-search search-icon"></i>
+                        </button>
+                        <input type="text" name="Search" placeholder="Search task, staff ..." class="form-control" />
+                    </div>
+                </form>
+                
+              </div>    
+              </nav>
+              
+
+            <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+              
+              <li
+                class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none"
+              >
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  <a href="/task/{{username}}/" class="logo">
+                  role="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  <i class="fa fa-search"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-search animated fadeIn">
+                  <form class="navbar-left navbar-form nav-search" action="/search/{{username}}/"} method="get">
+                    <div class="input-group">
+                      <input  name = "Search" type="text" placeholder="Search ..." class="form-control"
+                      />
+                    </div>
+                  </form>
+                </ul>
+
+              </li>
+              
+              <li class="nav-item topbar-icon dropdown hidden-caret">
+                
+                <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown" >
+                                 
+                  
+                  <li>
+                    <a class="see-all" href="javascript:void(0);"
+                      >See all notifications<i class="fa fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li> 
+              <li class="nav-item topbar-user dropdown hidden-caret">
+                <a
+                  class="dropdown-toggle profile-pic"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  aria-expanded="false"
+                >
+                  <div class="avatar-sm">
+                    <img
+                      src="profile.jpg"
+                      alt="..."
+                      class="avatar-img rounded-circle"
+                    />
+                  </div>
+                  <span class="profile-username">
+                    <span class="op-7">Hi,</span>
+                    <span class="fw-bold">{{employee.name}}</span>
+                  </span>
+                </a>
+                <ul class="dropdown-menu dropdown-user animated fadeIn">
+                  <div class="dropdown-user-scroll scrollbar-outer">
+                    <li>
+                      <div class="user-box">
+                        <div class="avatar-lg">
+                          <img
+                            src=".../img/profile.jpg"
+                            alt="image profile"
+                            class="avatar-img rounded"
+                          />
+                        </div>
+                        <div class="u-text">
+                          <h4>{{employee.name}}</h4>
+                          <p class="text-muted">{{employee.name}}@seev.sei.co.jp</p>
+                          <a
+                            href="#"
+                            class="btn btn-xs btn-secondary btn-sm"
+                            >View Profile</a
+                          >
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">My Profile</a>
+                      <a class="dropdown-item" href="#">Inbox</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{% url 'password_change' %}" >Change Password</a>
+                      <div class="dropdown-divider"></div>
+                      <form action="{% url 'logout' %}" method="post"> 
+                        {% csrf_token %}
+                        <button class="dropdown-item" type="submit"> Logout </button>
+                      </form> 
+                    </li>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+
+      </div>
+      
+              <!--Body container -->
+              <div class="container">
+                <div class="page-inner">
+                  <div class="page-header">
+                    
+                    <ul class="breadcrumbs mb-3">
+                      <li class="nav-home">
+                        <a href="/task/{{username}}/" class="logo">
+                          <i class="icon-home"></i>
+                        </a>
+                      </li>
+                      <li class="separator">
+                        <i class="icon-arrow-right"></i>
+                      </li>
+                     {% comment %}  <li class="nav-item">
+                        <a href="#">User</a>
+                      </li>
+                      <li class="separator">
+                        <i class="icon-arrow-right"></i>
+                      </li>
+                      <li class="nav-item">
+                        <a href="#">{{employee.name}}</a>
+                      </li> {% endcomment %}
+                    </ul>
+                  </div>                  
+                  
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="card">
+                        <div class="card-header">
+                          <div class="align-items-center">
+                            <h2 id="tieude"></h2>
+                            <script>
+                              // Lấy URL hiện tại
+                              const duongdan = window.location.pathname.split("/");
+                              const tieuchi = duongdan[2];  // /detail/{category}/{chartId}/{user}/
+                              const plbieudo = duongdan[3];  // /detail/01273/chart4/00426/2025-01-01/2025-12-31/
+                              const tungay = duongdan[5];  // /detail/01273/chart4/00426/2025-01-01/2025-12-31/
+                              const denngay = duongdan[6];  // /detail/01273/chart4/00426/2025-01-01/2025-12-31/
+                              if (plbieudo == "chart1") {
+                                document.getElementById("tieude").innerText = "Chi tiết công việc hoàn thành " + tieuchi + " từ: " + tungay + " đến: " + denngay ;
+                              }                            
+                              if (plbieudo == "chart2") {
+                                document.getElementById("tieude").innerText = "Chi tiết công việc " + tieuchi + " từ: " + tungay + " đến: " + denngay ;
+                              }                            
+                              if (plbieudo == "chart3") {
+                                document.getElementById("tieude").innerText = "Chi tiết công việc quá hạn " + tieuchi + " từ: " + tungay + " đến: " + denngay ;
+                              }        
+                              if (plbieudo == "chart4") {
+                                document.getElementById("tieude").innerText = "Chi tiết công việc cần thực hiện " + tieuchi + " từ: " + tungay + " đến: " + denngay ;
+                              }                            
+                              // Hiển thị chartId trên trang
+                              //document.getElementById("chartIdDisplay").innerText = "Chart ID: " + bieudoID;
+                            </script>
+                                                   
+                          </div>
+                        </div>
+                        <div class="card-body">
+                       {% comment %}    <a href="/approved/{{username}}"> Approved task list </a>
+                          <br>
+                          <a href="/task_done/{{username}}"> Task done list </a>  {% endcomment %}                         
+                          <div class="table-responsive">
+                              <table id="add-row" class="display table table-striped table-hover">
+                                  <thead>
+                                      <tr>
+                                          <th style="width: 3%">Leader</th>
+                                          <th style="color: red;">EmloyeeID</th>
+                                          <th>Task_Name</th>
+                                          <th>Date_Start</th>
+                                          <th style="color: red;">Date_plan</th>
+                                          <th>Date_Finish</th>
+                                          <th>Status</th>
+                                          <th>Evidenc</th>
+                                          <th>Report</th>
+                                          <th>Urgent</th>
+                                          <th>Progress</th>                                          
+                                      </tr>
+                                  </thead>
+                                  <tfoot>
+                                      <tr>
+                                          <th>Leader</th>
+                                          <th>EmloyeeID</th>
+                                          <th>Task_Name</th>
+                                          <th>Date_Start</th>
+                                          <th>Date_plan</th>
+                                          <th>Date_Finish</th>
+                                          <th>Status</th>
+                                          <th>Evidenc</th>
+                                          <th>Report</th>
+                                          <th>Urgent</th>
+                                          <th>Progress</th>                                          
+                                      </tr>
+                                  </tfoot>
+                                  <tbody>
+                                    {% for task in data %}
+                                      <tr>
+                                        <td> {{task.leader}} </td>
+                                        <td> {{task.employee_id}} </td>
+                                        <td> {{task.name}} </td>
+                                        <td> {{task.date_start}} </td>   
+                                        <td> {{task.date_plan}} </td>  
+                                        {% if task.date_finish == None %}
+                                            <td>  </td>  
+                                            {% else %}
+                                            <td> {{task.date_finish}} </td>  
+                                            {% endif %}
+                                        {% if task.status == 6 or task.status == 7 or task.status == 8 %}
+                                            {% if task.approvebyleader %}  
+                                            <td style="color: blue; font-style: italic;"> Closed </td> 
+                                            {% else %}    
+                                            <td style="color:rgb(0, 128, 0) ; font-style: italic;"> Finished </td>   
+                                            {% endif %}                                
+                                        {% endif %}
+                                        {% if task.status == 9 %}   
+                                        <td style="color: blue; font-style: italic;"> Closed </td>  
+                                        {% endif %}
+                                        {% if task.status == 5 %}   
+                                        <td style="color: red; font-style: italic;"> Expired </td>  
+                                        {% endif %}
+                                        {% if task.status == 4 %}   
+                                        <td style="color: deeppink; font-style: italic;"> Open </td> 
+                                        {% endif %}
+                                        {% if task.status == 3 %}   
+                                        <td> Đang làm .. </td> 
+                                        {% endif %}                                            
+                                        <td> <a href="/app1/media/{{task.evidence}}" target="_blank">{{task.evidence}}</a> </td>
+                                        <td> <a href="/app1/media/{{task.report}}" target="_blank">{{task.report}}</a> </td>
+                                        <td> {% if task.urgent %}
+                                             Urgent 
+                                             {% else %}
+                                            
+                                             {% endif %}                                                                                
+                                        </td>  
+                                        <td> {% if task.update_progress == None %}
+                                          
+                                          {% else %}
+                                            {{task.update_progress}}
+                                          {% endif %}                                                                                
+                                        </td>                                         
+                                        <td>
+                                                {% if employee.employee_id == task.employee_id and task.date_finish == None %}
+                                                    <div class="form-button-action">
+                                                        <a type="button" href = "/update_task/{{username}}/{{task.task_id}}  " title="edit" class="btn btn-link btn-primary btn-lg">
+                                                            <i class="fa fa-edit"></i>
+                                                        </a>
+                                                    </div>
+                                              {% else %}
+
+                                              {% endif %}
+                                        </td>
+                                      </tr>
+                                      
+                                    {% endfor %}
+                              </tbody>
+                            </table>                          
+                          </div>
+
+                         
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <!-- END-Body container -->
+      
+              <footer class="footer">
+                <div class="container-fluid d-flex justify-content-between">
+                  
+                  <div class="copyright">
+                    2025, made with <i class="fa fa-heart heart text-danger"></i> by
+                    <a href="#">SEEV</a>
+                  </div>
+                  
+                </div>
+              </footer>
+            </div>
+      
+        </div>        
+
+        <script>
+            $(document).ready(function () {
+              $("#basic-datatables").DataTable({});
+      
+              $("#multi-filter-select").DataTable({
+                pageLength: 5,
+                initComplete: function () {
+                  this.api()
+                    .columns()
+                    .every(function () {
+                      var column = this;
+                      var select = $(
+                        '<select class="form-select"><option value=""></option></select>'
+                      )
+                        .appendTo($(column.footer()).empty())
+                        .on("change", function () {
+                          var val = $.fn.dataTable.util.escapeRegex($(this).val());
+      
+                          column
+                            .search(val ? "^" + val + "$" : "", true, false)
+                            .draw();
+                        });
+      
+                      column
+                        .data()
+                        .unique()
+                        .sort()
+                        .each(function (d, j) {
+                          select.append(
+                            '<option value="' + d + '">' + d + "</option>"
+                          );
+                        });
+                    });
+                },
+              });
+      
+              // Add Row
+              $("#add-row").DataTable({
+                pageLength: 5,
+              });
+      
+              var action =
+                '<td> <div class="form-button-action"> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
+      
+              $("#addRowButton").click(function () {
+                $("#add-row")
+                  .dataTable()
+                  .fnAddData([
+                    $("#addName").val(),
+                    $("#addPosition").val(),
+                    $("#addOffice").val(),
+                    action,
+                  ]);
+                $("#addRowModal").modal("hide");
+              });
+            });
+          </script>
+    </body>
+    {% endblock   %}
