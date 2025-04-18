@@ -87,7 +87,7 @@ DATABASES = {
         "NAME": "task_db",
         "USER": "postgres",
         "PASSWORD": "Khanhan2015@",
-        "HOST": "localhost",
+        "HOST": "10.212.2.67",
         "PORT": "5432",
     }
 }
